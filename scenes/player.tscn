@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bc3ldyfgns8w7"]
+
+[ext_resource type="Script" uid="uid://d2d6k0jwihvj6" path="res://scenes/player.gd" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://bwbk43kt2ni8c" path="res://assets/sprite_sheets/crabby_boy.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(0, 0, 13, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(13, 0, 13, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1klb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Player" type="Node2D" unique_id=2127036842]
+script = ExtResource("1_player")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2137488226]
+sprite_frames = SubResource("SpriteFrames_w1klb")
+autoplay = "default"
+frame = 1
+offset = Vector2(0.5, 0.5)

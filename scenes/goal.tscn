@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ycea0rjdf54c"]
+
+[ext_resource type="Texture2D" uid="uid://bnabv4p8cjagf" path="res://assets/sprite_sheets/sandcastle.png" id="2_sx1j4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3gav"]
+atlas = ExtResource("2_sx1j4")
+region = Rect2(0, 0, 22, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvyg3"]
+atlas = ExtResource("2_sx1j4")
+region = Rect2(22, 0, 22, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1klb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3gav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvyg3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Goal" type="Node2D" unique_id=225038002]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1749554023]
+sprite_frames = SubResource("SpriteFrames_w1klb")
+autoplay = "default"
+frame_progress = 0.9510617

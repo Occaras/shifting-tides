@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dt1w0xg56ttt8"]
+
+[ext_resource type="Script" uid="uid://brm1ochx7miqd" path="res://scenes/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/level.tscn" id="2_level"]
+[ext_resource type="PackedScene" path="res://progression/level_select.tscn" id="3_select"]
+[ext_resource type="PackedScene" path="res://progression/level_complete.tscn" id="4_complete"]
+[ext_resource type="PackedScene" path="res://scenes/sky.tscn" id="5_sky"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="6_hud"]
+[ext_resource type="PackedScene" uid="uid://da4h6bx350726" path="res://scenes/sfx.tscn" id="7_sfx"]
+[ext_resource type="AudioStream" uid="uid://dpxumm5xwgqxu" path="res://assets/audio/music/seashore_memory.ogg" id="8_music"]
+[ext_resource type="PackedScene" path="res://progression/title_screen.tscn" id="9_title"]
+[ext_resource type="PackedScene" path="res://scenes/notice.tscn" id="10_notice"]
+[ext_resource type="PackedScene" path="res://progression/controls_overlay.tscn" id="11_controls"]
+[ext_resource type="PackedScene" path="res://progression/settings_panel.tscn" id="12_settings"]
+
+[node name="Main" type="Node2D" unique_id=1699178995]
+script = ExtResource("1_main")
+
+[node name="Sky" parent="." unique_id=1757301838 node_paths=PackedStringArray("level") instance=ExtResource("5_sky")]
+level = NodePath("../Level")
+
+[node name="Level" parent="." unique_id=1596859578 instance=ExtResource("2_level")]
+unique_name_in_owner = true
+
+[node name="HUD" parent="." unique_id=1511327 node_paths=PackedStringArray("level") instance=ExtResource("6_hud")]
+level = NodePath("../Level")
+
+[node name="LevelSelect" parent="." unique_id=359768397 instance=ExtResource("3_select")]
+unique_name_in_owner = true
+
+[node name="LevelComplete" parent="." unique_id=1455720951 instance=ExtResource("4_complete")]
+unique_name_in_owner = true
+
+[node name="Title" parent="." instance=ExtResource("9_title")]
+unique_name_in_owner = true
+
+[node name="Notice" parent="." instance=ExtResource("10_notice")]
+unique_name_in_owner = true
+
+[node name="ControlsOverlay" parent="." instance=ExtResource("11_controls")]
+unique_name_in_owner = true
+
+[node name="SettingsPanel" parent="." node_paths=PackedStringArray("controls") instance=ExtResource("12_settings")]
+unique_name_in_owner = true
+controls = NodePath("../ControlsOverlay")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=832494255]
+stream = ExtResource("8_music")
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+
+[node name="Sfx" parent="." unique_id=1905336890 node_paths=PackedStringArray("level") instance=ExtResource("7_sfx")]
+level = NodePath("../Level")

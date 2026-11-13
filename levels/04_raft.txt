@@ -1,0 +1,9 @@
+name: Raft
+high_tides: 3
+par: 9
+hint: A floating boat follows you
+@ 4 . . . .
+4 b . . . .
+. . . . . .
+. . . . . 4
+. . . . . G

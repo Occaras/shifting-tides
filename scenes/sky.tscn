@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cp201nwcvrchr" path="res://scenes/sky.gd" id="1_sky"]
+[ext_resource type="Texture2D" uid="uid://dt12a7xddgd3f" path="res://assets/sky/band_0.png" id="2_band"]
+[ext_resource type="Texture2D" uid="uid://dttofqatiwpn0" path="res://assets/sky/arc.png" id="3_arc"]
+[ext_resource type="Texture2D" uid="uid://j25kwffce5tr" path="res://assets/sky/sun.png" id="4_sun"]
+[ext_resource type="Script" uid="uid://bi38bo7g83jn6" path="res://scenes/tide_chart.gd" id="5_chart"]
+
+[node name="Sky" type="Node2D"]
+script = ExtResource("1_sky")
+
+[node name="Band" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_band")
+centered = false
+
+[node name="Arc" type="Sprite2D" parent="."]
+texture = ExtResource("3_arc")
+centered = false
+
+[node name="Sun" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(48, 35)
+texture = ExtResource("4_sun")
+
+[node name="Marks" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Chart" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_chart")

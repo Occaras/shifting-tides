@@ -1,0 +1,53 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://bspxcd6w44tww" path="res://progression/settings_panel.gd" id="1_panel"]
+[ext_resource type="Theme" uid="uid://ktgfg2omx8en" path="res://scenes/hud_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://cn3n80swseqjq" path="res://assets/ui/controls_panel.png" id="3_panel"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 14.0
+texture = ExtResource("3_panel")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="SettingsPanel" type="CanvasLayer"]
+layer = 50
+visible = false
+script = ExtResource("1_panel")
+
+[node name="Center" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.86)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_panel")
+
+[node name="Column" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/Panel/Column"]
+layout_mode = 2
+theme_type_variation = &"HudName"
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Center/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
+columns = 4

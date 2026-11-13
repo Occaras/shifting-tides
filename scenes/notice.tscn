@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/notice.gd" id="1_notice"]
+[ext_resource type="Theme" path="res://scenes/hud_theme.tres" id="2_theme"]
+
+[node name="Notice" type="CanvasLayer"]
+layer = 40
+script = ExtResource("1_notice")
+
+[node name="Text" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -4.0
+offset_top = 11.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 0
+theme = ExtResource("2_theme")
+theme_type_variation = &"Notice"
+horizontal_alignment = 2

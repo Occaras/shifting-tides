@@ -1,0 +1,7 @@
+name: Sandbar
+high_tides: 2
+par: 8
+hint: Wait for low water [wait]
+4 4 . . . 4
+@ 4 2 2 2 G
+4 4 . . . 4

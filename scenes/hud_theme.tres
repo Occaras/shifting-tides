@@ -1,0 +1,63 @@
+[gd_resource type="Theme" format=3 uid="uid://ktgfg2omx8en"]
+
+[ext_resource type="FontVariation" path="res://assets/fonts/monogram.tres" id="0_font"]
+[ext_resource type="Texture2D" uid="uid://c3fraul27jtvh" path="res://assets/hud/keycap.png" id="2_keycap"]
+[ext_resource type="Texture2D" uid="uid://1f8cx47cx12" path="res://assets/hud/keycap_legend.png" id="3_keycap_legend"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_keycap"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("2_keycap")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_keycap_legend"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("3_keycap_legend")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_notice"]
+content_margin_left = 2.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+
+[resource]
+default_font = ExtResource("0_font")
+HudCount/base_type = &"Label"
+HudCount/colors/font_color = Color(1, 0.9019608, 0.72156864, 1)
+HudLegend/base_type = &"Label"
+HudLegend/colors/font_color = Color(0.7764706, 0.6784314, 0.7019608, 1)
+HudInk/base_type = &"Label"
+HudInk/colors/font_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+HudName/base_type = &"Label"
+HudName/colors/font_color = Color(1, 0.8509804, 0.6901961, 1)
+HudTitle/base_type = &"Label"
+HudTitle/colors/font_color = Color(1, 0.8509804, 0.6901961, 1)
+HudTitle/colors/font_shadow_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+HudTitle/constants/shadow_offset_x = 2
+HudTitle/constants/shadow_offset_y = 2
+HudTitle/font_sizes/font_size = 32
+Keycap/base_type = &"PanelContainer"
+Keycap/styles/panel = SubResource("StyleBoxTexture_keycap")
+KeycapLegend/base_type = &"PanelContainer"
+KeycapLegend/styles/panel = SubResource("StyleBoxTexture_keycap_legend")
+KeycapLegendName/base_type = &"Label"
+KeycapLegendName/colors/font_color = Color(1, 0.9019608, 0.72156864, 1)
+KeycapName/base_type = &"Label"
+KeycapName/colors/font_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+Label/font_sizes/font_size = 16
+Notice/base_type = &"Label"
+Notice/colors/font_color = Color(1, 0.9019608, 0.72156864, 1)
+Notice/styles/normal = SubResource("StyleBoxFlat_notice")

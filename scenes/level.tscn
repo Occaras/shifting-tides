@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_level"]
+[ext_resource type="Script" path="res://core/tide_clock.gd" id="2_clock"]
+[ext_resource type="PackedScene" path="res://scenes/board.tscn" id="3_board"]
+[ext_resource type="Script" path="res://scenes/debug_tide_scrub.gd" id="4_scrub"]
+[ext_resource type="PackedScene" path="res://scenes/goal.tscn" id="5_goal"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="6_player"]
+[ext_resource type="PackedScene" path="res://scenes/ripple_hint.tscn" id="7_ripple_hint"]
+[ext_resource type="PackedScene" path="res://scenes/wave.tscn" id="8_wave"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="TideClock" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_clock")
+
+[node name="Board" parent="." instance=ExtResource("3_board")]
+unique_name_in_owner = true
+
+[node name="RippleHint" parent="." node_paths=PackedStringArray("level") instance=ExtResource("7_ripple_hint")]
+level = NodePath("..")
+
+[node name="DebugTideScrub" type="Node" parent="." node_paths=PackedStringArray("tide_clock")]
+script = ExtResource("4_scrub")
+tide_clock = NodePath("../TideClock")
+
+[node name="Goal" parent="." instance=ExtResource("5_goal")]
+unique_name_in_owner = true
+
+[node name="Shells" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Boats" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("6_player")]
+unique_name_in_owner = true
+
+[node name="Wave" parent="." node_paths=PackedStringArray("level") instance=ExtResource("8_wave")]
+level = NodePath("..")
+
+[connection signal="tide_changed" from="TideClock" to="Board" method="on_tide_changed"]
+[connection signal="tide_changed" from="TideClock" to="." method="_on_tide_changed"]

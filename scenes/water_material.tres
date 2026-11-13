@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cejwg2y4ru84r"]
+
+[ext_resource type="Shader" uid="uid://c66phnh2h6wir" path="res://scenes/water.gdshader" id="1_shader"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_shimmer"]
+frequency = 0.15
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_shimmer"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_shimmer")
+seamless = true
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_shader")
+shader_parameter/noise = SubResource("NoiseTexture2D_shimmer")
+shader_parameter/noise_smooth = SubResource("NoiseTexture2D_shimmer")
+shader_parameter/size_px = Vector2(640, 303)
+shader_parameter/board_origin_px = Vector2(0, 0)
+shader_parameter/board_cells = Vector2(1, 1)
+shader_parameter/tide = 0.0
+shader_parameter/sea_color = Color(0.16470589, 0.16470589, 0.36862746, 1)
+shader_parameter/shallow_color = Color(0.23921569, 0.22745098, 0.43137255, 0.7019608)
+shader_parameter/glint_color = Color(0.5411765, 0.43529412, 0.6901961, 1)
+shader_parameter/foam_color = Color(1, 0.851, 0.69, 1)
+shader_parameter/foam_break = 0.35

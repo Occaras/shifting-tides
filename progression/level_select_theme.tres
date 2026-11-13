@@ -1,0 +1,47 @@
+[gd_resource type="Theme" format=3 uid="uid://do04kc155yhwq"]
+
+[ext_resource type="FontVariation" path="res://assets/fonts/monogram.tres" id="0_font"]
+[ext_resource type="Texture2D" uid="uid://dj2sqe1rn5b7f" path="res://assets/ui/slot.png" id="1_slot"]
+[ext_resource type="Texture2D" uid="uid://bhpxas7ypvhw0" path="res://assets/ui/slot_focus.png" id="2_focus"]
+[ext_resource type="Texture2D" uid="uid://4t6yk3e35hii" path="res://assets/ui/slot_locked.png" id="3_locked"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_disabled"]
+texture = ExtResource("3_locked")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_focus"]
+texture = ExtResource("2_focus")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_normal"]
+texture = ExtResource("1_slot")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[resource]
+default_font = ExtResource("0_font")
+Button/colors/font_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+Button/colors/font_disabled_color = Color(0.5411765, 0.43529412, 0.6901961, 1)
+Button/colors/font_focus_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+Button/colors/font_hover_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+Button/colors/font_hover_pressed_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+Button/colors/font_pressed_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+Button/font_sizes/font_size = 32
+Button/styles/disabled = SubResource("StyleBoxTexture_disabled")
+Button/styles/focus = SubResource("StyleBoxTexture_focus")
+Button/styles/hover = SubResource("StyleBoxTexture_normal")
+Button/styles/normal = SubResource("StyleBoxTexture_normal")
+Button/styles/pressed = SubResource("StyleBoxTexture_normal")
+Label/colors/font_color = Color(1, 0.8509804, 0.6901961, 1)
+Label/font_sizes/font_size = 32
+SlotBest/base_type = &"Label"
+SlotBest/colors/font_color = Color(0.101960786, 0.12156863, 0.18039216, 1)
+SlotBest/font_sizes/font_size = 16

@@ -1,0 +1,11 @@
+name: Out of reach
+high_tides: 4
+par: 18
+hint: Drift over shells to scoop them
+@ 4 b . . . . .
+4 4 . . . . . .
+4 . . . . . . .
+4 4 4 4 . * . .
+4 4 4 . . . . .
+2 4 4 . . . . .
+G 2 4 . . . . .

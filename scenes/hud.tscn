@@ -1,0 +1,69 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dhcv52b4nbwlj" path="res://scenes/hud.gd" id="1_hud"]
+[ext_resource type="Theme" uid="uid://ktgfg2omx8en" path="res://scenes/hud_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://c70n417cfnwbk" path="res://assets/hud/hint_bar.png" id="3_hint_bar"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Frame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="Name" type="Label" parent="Frame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+theme_type_variation = &"HudName"
+
+[node name="Actions" type="Label" parent="Frame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 18.0
+offset_right = 3.0
+offset_bottom = 18.0
+theme_type_variation = &"HudCount"
+
+[node name="Shells" type="Label" parent="Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 1.0
+offset_top = 3.0
+offset_right = -6.0
+offset_bottom = 3.0
+grow_horizontal = 0
+theme_type_variation = &"HudCount"
+horizontal_alignment = 2
+
+[node name="HintBar" type="TextureRect" parent="Frame"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_top = 345.0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("3_hint_bar")
+
+[node name="Hint" type="HBoxContainer" parent="Frame/HintBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 2.0
+offset_bottom = 14.0
+grow_horizontal = 2
+mouse_filter = 2
+alignment = 1

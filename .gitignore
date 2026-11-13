@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Exported builds; build/.gdignore stays so Godot never imports them as assets.
+/build/*
+!/build/.gdignore

@@ -1,0 +1,66 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dpvqxacygh766" path="res://scenes/wave.gd" id="1_wave"]
+[ext_resource type="Texture2D" uid="uid://3t18yqyvkwl4" path="res://assets/sky/wave_front.png" id="2_front"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0"]
+atlas = ExtResource("2_front")
+region = Rect2(0, 0, 40, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1"]
+atlas = ExtResource("2_front")
+region = Rect2(40, 0, 40, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2"]
+atlas = ExtResource("2_front")
+region = Rect2(80, 0, 40, 303)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3"]
+atlas = ExtResource("2_front")
+region = Rect2(120, 0, 40, 303)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_front"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Wave" type="Node2D"]
+script = ExtResource("1_wave")
+
+[node name="Sweep" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-48, 0)
+
+[node name="Flood" type="ColorRect" parent="Sweep"]
+unique_name_in_owner = true
+offset_left = -1280.0
+offset_right = 0.0
+mouse_filter = 2
+color = Color(0.16470589, 0.16470589, 0.36862746, 1)
+
+[node name="Front" type="AnimatedSprite2D" parent="Sweep"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_front")
+centered = false
+
+[node name="Blackout" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 2
+color = Color(0.101960786, 0.12156863, 0.18039216, 1)

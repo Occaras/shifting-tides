@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://progression/title_screen.gd" id="1_title"]
+[ext_resource type="PackedScene" path="res://scenes/sky.tscn" id="2_sky"]
+[ext_resource type="PackedScene" path="res://scenes/board.tscn" id="3_board"]
+[ext_resource type="PackedScene" path="res://scenes/goal.tscn" id="4_goal"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="5_player"]
+[ext_resource type="Theme" path="res://scenes/hud_theme.tres" id="6_theme"]
+[ext_resource type="PackedScene" path="res://scenes/wave.tscn" id="7_wave"]
+
+[node name="Title" type="CanvasLayer"]
+layer = 30
+visible = false
+script = ExtResource("1_title")
+
+[node name="Sky" parent="." instance=ExtResource("2_sky")]
+unique_name_in_owner = true
+
+[node name="Board" parent="." instance=ExtResource("3_board")]
+unique_name_in_owner = true
+
+[node name="Goal" parent="." instance=ExtResource("4_goal")]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+unique_name_in_owner = true
+
+[node name="Name" type="Label" parent="."]
+offset_top = 120.0
+offset_right = 640.0
+offset_bottom = 141.0
+theme = ExtResource("6_theme")
+theme_type_variation = &"HudTitle"
+text = "SHIFTING TIDES"
+horizontal_alignment = 1
+
+[node name="Prompt" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_top = 262.0
+offset_right = 320.0
+offset_bottom = 274.0
+scale = Vector2(2, 2)
+mouse_filter = 2
+theme = ExtResource("6_theme")
+alignment = 1
+
+[node name="ControlsPrompt" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_top = 292.0
+offset_right = 640.0
+offset_bottom = 304.0
+mouse_filter = 2
+theme = ExtResource("6_theme")
+alignment = 1
+
+[node name="Wave" parent="." instance=ExtResource("7_wave")]
+unique_name_in_owner = true

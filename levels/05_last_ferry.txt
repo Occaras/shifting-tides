@@ -1,0 +1,9 @@
+name: Last ferry
+high_tides: 4
+par: 17
+hint: Boats sail over drowned rock
+@ b . . . G
+3 . . . . 4
+2 . . . . .
+1 . . . . .
+* . . . . .

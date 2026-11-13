@@ -1,0 +1,8 @@
+name: The shell
+high_tides: 4
+par: 15
+@ 4 3 3 4 G
+4 . . . . 4
+3 . . . . .
+2 . . . . .
+* . . . . .
